@@ -20,6 +20,7 @@ def app():
 # Load the webpage
     
     driver = webdriver.Chrome(options=options)
+    #changed to baragah.com. because it is easier.
     driver.get('https://bazargah.com/bus-ticket/search/esfahan-to-khansar/%s' %date)
 
     time.sleep(float(stime))
@@ -35,11 +36,11 @@ def app():
     driver.quit()
 
 def call():
-    ids = ['493411453', '6355009880','401370198']
-    #ids = ['435900563']
+    #chat IDs
+    ids = ['']
     for id in ids:
         driver = webdriver.Chrome(options=options)
-        driver.get('https://api.telegram.org/bot6810414664:AAFa249Helw0xFn3ww05-6cPFN2jY3hUCyQ/sendMessage?chat_id=%s&text=bilit%s' %(id, date))
+        driver.get('https://api.telegram.org/botTICKET/sendMessage?chat_id=%s&text=bilit%s' %(id, date))
         time.sleep(10)
         driver.quit()
 
